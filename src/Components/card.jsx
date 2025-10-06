@@ -4,7 +4,7 @@ import checkicon from '../assets/Checks.svg';
 import phyicon from '../assets/subjecticon.svg'
 import chemicon from '../assets/subjecticon-1.svg'
 import mathicon from '../assets/subjecticon-2.svg'
-import acuracy from '../assets/target.svg'
+import acuracy from '../assets/Target.svg'
 
 
 function Card({ data }) {
