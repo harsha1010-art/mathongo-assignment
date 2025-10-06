@@ -1,66 +1,84 @@
-# Mathongo Assignment
+# 🧮 Mathongo Frontend Developer Assignment
 
-This repository contains the source code for the **Mathongo Assignment** project. It is primarily built using JavaScript, with styling handled by CSS and minimal HTML structure.
+This repository contains the source code for the **Mathongo Frontend Developer Assignment**, built according to the official task guidelines.  
+The project replicates the provided **Leaderboard UI** using **React.js**, **Tailwind CSS**, and **shadcn/ui**, ensuring design accuracy, responsiveness, and smooth functionality.
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Overview
-
-Mathongo Assignment is designed to demonstrate front-end web development skills, focusing on interactive and responsive user interfaces. The project can be used as a template or starter for similar assignments or exercises.
-
-## Features
-
-- Interactive UI components built with JavaScript
-- Responsive design with CSS
-- Clean and minimal HTML structure
-- Easy to extend and customize
-
-## Technologies Used
-
-- **JavaScript** (74.7%)
-- **CSS** (23.9%)
-- **HTML** (1.4%)
-
-## Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/harsha1010-art/mathongo-assignment.git
-   cd mathongo-assignment
-   ```
-
-2. **Open the project**
-   - You can open the `index.html` file directly in your browser.
-   - Or host the project using a local server for better development experience.
-
-## Usage
-
-1. Make sure all files are in the same directory.
-2. Open `index.html` in your preferred web browser.
-3. Interact with the UI as intended by the assignment.
-
-## Contributing
-
-Contributions are welcome! If you have suggestions or improvements, please fork the repository and submit a pull request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+🌐 **Live Demo:** [https://mathongo-assgnmnt.netlify.app/](https://mathongo-assgnmnt.netlify.app/)
 
 ---
 
-**Author:** [harsha1010-art](https://github.com/harsha1010-art)
+
+
+## 🧭 Overview
+
+This project was developed as part of the **Frontend Developer Assignment** by Mathongo.  
+It recreates the **Leaderboard screen** from the given Figma design, showcasing component-driven development, dynamic data rendering, and precise styling implementation.
+
+---
+
+## 🎯 Objective
+
+Build the provided UI screens using **React.js**, **Tailwind CSS**, and **shadcn/ui**, ensuring:
+
+- 🎨 Pixel-perfect match with the provided Figma design  
+- 📱 Fully responsive layout for multiple screen sizes  
+- ♿ Accessibility compliance  
+- 🌗 Theme toggle (light/dark)  
+- ⚡ Dynamic icon rendering using Phosphor  
+- 🎯 Consistent design tokens and color variables
+
+---
+
+## ⚙️ Tech Stack
+
+| Technology | Purpose |
+|-------------|----------|
+| **React.js** | Component-based UI development |
+| **Tailwind CSS** | Styling and responsive layout |
+| **shadcn/ui** | Accessible and reusable components |
+| **Phosphor Icons** | Dynamic icon rendering |
+| **Netlify** | Deployment and hosting |
+
+---
+
+## 🚀 Features Implemented
+
+### 🏆 Leaderboard View
+- Recreated leaderboard design from Figma with **pixel perfection**
+- Integrated with **official leaderboard API**:  
+  `https://api.quizrr.in/api/hiring/leaderboard?page=1&limit=100`
+- Dynamic data population for ranks, scores, and subjects
+
+### 🌗 Theme Toggle
+- Light/Dark mode implemented using Tailwind's `dark` class  
+- Smooth toggle transitions and persistent state handling
+
+### 📊 Table Functionality
+- Fixed height scrollable table section  
+- **Synced horizontal scrolling** between table and fixed bottom row  
+- **Dynamic columns** supporting PCM or other subject combinations  
+- **Pagination** for handling large datasets  
+- Responsive across devices (desktop, tablet, mobile)
+
+---
+
+## ⚙️ Behavioral Requirements Covered
+
+| Requirement | Status |
+|--------------|---------|
+| Fixed height table scroll | ✅ Implemented |
+| Synced horizontal scroll | ✅ Implemented |
+| Dynamic column support | ✅ Implemented |
+| Pagination | ✅ Implemented |
+| Responsive UI | ✅ Fully responsive |
+| Pixel-perfect match | ✅ Verified against Figma |
+| Dark mode | ✅ Implemented |
+
+---
+
+## 🧩 Installation
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/harsha1010-art/mathongo-assignment.git
+cd mathongo-assignment
