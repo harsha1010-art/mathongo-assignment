@@ -58,7 +58,6 @@ function Card({ data }) {
 };
 
 
-  // Limit to 3 actual data cards, 4th is random Harsha card
  const mappedData = data.slice(0, 3).map(item => {
     const phyScore = item.subjects?.find(s => s.subjectId.title === "Physics")?.totalMarkScored ?? 0;
     const chemScore = item.subjects?.find(s => s.subjectId.title === "Chemistry")?.totalMarkScored ?? 0;
@@ -101,9 +100,9 @@ if (rank73) {
         return (
         <div
   key={index}
-  className="relative rounded-3xl p-[2px]" // gradient border width
+  className="relative rounded-3xl p-[2px]" 
   style={{
-    background: rankStyles.border, // gradient border
+    background: rankStyles.border, 
     borderRadius: rankStyles.borderRadius,
   }}
 >

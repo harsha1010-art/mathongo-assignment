@@ -3,7 +3,6 @@ import avtar from '../assets/Avatar1.svg';
 
 function BottomRankStyle({ data }) {
   const bottomScrollRef = useRef(null);
-  // Find the 73rd rank from data
   const rank73 = data?.find(item => item.rank === 73);
 
   useEffect(() => {
@@ -25,15 +24,12 @@ function BottomRankStyle({ data }) {
     }
   }, []);
 
-  // If not found, don't render anything
   if (!rank73) return null;
 
-  // Extract subject scores
   const physics = rank73.subjects?.find(s => s.subjectId.title === "Physics")?.totalMarkScored ?? 0;
   const chemistry = rank73.subjects?.find(s => s.subjectId.title === "Chemistry")?.totalMarkScored ?? 0;
   const maths = rank73.subjects?.find(s => s.subjectId.title === "Mathematics")?.totalMarkScored ?? 0;
 
-  // Prepare userData from rank73
   const userData = {
     rank: rank73.rank,
     name: rank73.userId?.name || rank73.name,
@@ -63,13 +59,11 @@ function BottomRankStyle({ data }) {
       <table className="min-w-full divide-y divide-gray-200 w-max">
         <tbody className="bg-[var(--q3-surface-dimmest)]">
           <tr>
-            {/* Rank */}
             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-16">
               <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-xs font-bold text-gray-800 ">
                 {userData.rank}
               </div>
             </td>
-            {/* Student Name */}
             <td className="px-6 py-4 whitespace-nowrap  md:w-70 lg:w-40">
               <div className="flex items-center gap-3">
                 <img
@@ -85,31 +79,26 @@ function BottomRankStyle({ data }) {
                 </div>
               </div>
             </td>
-            {/* Overall Score */}
             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 w-32 ">
               <div className="bg-white px-3 py-1 rounded-full  text-sm font-medium text-gray-800 inline-block">
                 {userData.overallScore}
               </div>
             </td>
-            {/* Phy */}
             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-20 ">
               <div className=" px-2 py-1 rounded  text-md text-[var(--q3-neutral-default)] inline-block">
                 {userData.physics}
               </div>
             </td>
-            {/* Chem */}
             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-20 ">
               <div className=" px-2 py-1 rounded  text-md text-[var(--q3-neutral-default)] inline-block">
                 {userData.chemistry}
               </div>
             </td>
-            {/* Maths */}
             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-20 ">
               <div className=" px-2 py-1 rounded  text-md text-[var(--q3-neutral-default)] inline-block">
                 {userData.maths}
               </div>
             </td>
-            {/* Accuracy */}
             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-24">
               <div className="text-sm font-semibold text-[var(--q3-neutral-default)]">
                 {userData.accuracy}

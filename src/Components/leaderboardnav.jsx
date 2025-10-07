@@ -21,7 +21,7 @@ function LeaderBoardNav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // 🔹 Increase scroll threshold to 150 (was 100)
+      
       setIsScrolled(window.scrollY > 150);
     };
     window.addEventListener('scroll', handleScroll);
@@ -34,7 +34,7 @@ function LeaderBoardNav() {
         className={`leaderboardnav sticky top-0 z-50 
         bg-[var(--q3-surface-glass-normal)] border-b border-[var(--q3-stroke-light)] 
         backdrop-blur-sm rounded-b-lg 
-        ${isScrolled ? 'transition-none' : 'transition-all duration-300'}`} // 🔹 Remove transition when scrolled
+        ${isScrolled ? 'transition-none' : 'transition-all duration-300'}`} 
       >
         <div
           className={`gap-4 p-4 items-center ${
@@ -53,7 +53,7 @@ function LeaderBoardNav() {
           </div>
         </div>
 
-        {/* 🔹 Hide breadcrumb with no transition after threshold */}
+        {/*  Hide breadcrumb with no transition after threshold */}
         <div
           className="flex gap-2 px-4 overflow-x-auto overflow-y-hidden"
           style={{
@@ -62,7 +62,7 @@ function LeaderBoardNav() {
             visibility: isScrolled ? 'hidden' : 'visible',
             paddingBottom: isScrolled ? 0 : 16,
             transition: isScrolled
-              ? 'none' // 🔹 Remove transition after scroll threshold
+              ? 'none' 
               : 'height 0.3s, opacity 0.3s, visibility 0.3s, padding-bottom 0.3s',
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',

@@ -1,5 +1,4 @@
 import React from "react";
-import useApiFetch from "../Services/apifetch";
 import LeaderBoardNav from "../Components/leaderboardnav";
 import Card from "../Components/card";
 import RankTable from "../Components/ranktable";
@@ -22,32 +21,27 @@ function Skeleton() {
 function LandingPage() {
   const [allData, setAllData] = React.useState([]);
   const [apiPage, setApiPage] = React.useState(1);
+  const [limit, setLimit] = React.useState(100); // 🔹 start with 100 for first fetch
   const [loading, setLoading] = React.useState(false);
   const [hasMore, setHasMore] = React.useState(true);
   const [error, setError] = React.useState(null);
   const apiurl = import.meta.env.VITE_API;
 
-  // Fetch data function
-  const fetchData = async (page) => {
+  // Fetch data from API
+  const fetchData = async (page, limit) => {
     setLoading(true);
     setError(null);
-    
+
     try {
-      const url = `${apiurl}/leaderboard?page=${page}&limit=100`;
+      const url = `${apiurl}/leaderboard?page=${page}&limit=${limit}`;
       const response = await fetch(url);
-      
-      if (!response.ok) {
-        throw new Error('Failed to fetch data');
-      }
-      
+      if (!response.ok) throw new Error("Failed to fetch data");
+
       const data = await response.json();
       const results = data?.data?.results || [];
-      
-      // Check if there's more data
-      if (results.length < 100) {
-        setHasMore(false);
-      }
-      
+
+      if (results.length < limit) setHasMore(false);
+
       return results;
     } catch (err) {
       setError(err.message);
@@ -58,23 +52,23 @@ function LandingPage() {
     }
   };
 
-  // Initial load
+  // Initial load → fetch 100 items
   React.useEffect(() => {
-    fetchData(1).then(data => {
+    fetchData(1, 100).then(data => {
       setAllData(data);
+      setLimit(30); // 🔹 after first fetch, change limit to 30 for next loads
     });
   }, []);
 
-  // Load more data when apiPage changes
+  // Load more when apiPage increases
   React.useEffect(() => {
     if (apiPage > 1) {
-      fetchData(apiPage).then(data => {
+      fetchData(apiPage, limit).then(data => {
         setAllData(prev => [...prev, ...data]);
       });
     }
-  }, [apiPage]);
+  }, [apiPage, limit]);
 
-  // Handler to load more data
   const handleLoadMore = () => {
     if (hasMore && !loading) {
       setApiPage(prev => prev + 1);
@@ -91,8 +85,8 @@ function LandingPage() {
           <div className="hidden lg:block">
             <Card data={allData} />
           </div>
-          <RankTable 
-            data={allData} 
+          <RankTable
+            data={allData}
             onLoadMore={handleLoadMore}
             hasMore={hasMore}
             loading={loading}
