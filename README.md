@@ -35,7 +35,6 @@ Build the provided UI screens using **React.js**, **Tailwind CSS**, and **shadcn
 |-------------|----------|
 | **React.js** | Component-based UI development |
 | **Tailwind CSS** | Styling and responsive layout |
-| **shadcn/ui** | Accessible and reusable components |
 | **Phosphor Icons** | Dynamic icon rendering |
 | **Netlify** | Deployment and hosting |
 
@@ -48,6 +47,7 @@ Build the provided UI screens using **React.js**, **Tailwind CSS**, and **shadcn
 - Integrated with **official leaderboard API**:  
   `https://api.quizrr.in/api/hiring/leaderboard?page=1&limit=100`
 - Dynamic data population for ranks, scores, and subjects
+- Dynamic pagination 
 
 ### 🌗 Theme Toggle
 - Light/Dark mode implemented using Tailwind's `dark` class  
